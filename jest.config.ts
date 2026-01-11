@@ -8,4 +8,12 @@ module.exports = {
     clearMocks: true,
     resetMocks: true,
     restoreMocks: true,
+    transform: {
+        '^.+\\.[tj]s$': ['ts-jest', {
+            isolatedModules: true,
+        }],
+    },
+    transformIgnorePatterns: [
+        'node_modules/(?!(uuid)/)',
+    ],
 };
